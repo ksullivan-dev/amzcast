@@ -1,0 +1,40 @@
+language: node_js
+cache:
+  directories:
+  - node_modules
+install:
+- npm install
+script:
+- gulp configure-$TRAVIS_BRANCH
+- gulp build
+deploy:
+- provider: s3
+  skip-cleanup: true
+  access_key_id: AKIAJU7OHSZIB66QHHFA
+  secret_access_key: &1
+    secure: QLBnUTRb0IM4utX/WfwfcGhimBocfJyJTXyrqSRM+KUWN/kzkTWuFAIdwUjQvvLEw/DaCsCPU9fAE4SnOsONmXQwU6xo0Rh0Zn6Bna5/z5SyAlh8OpL+ZsftQ8cPmc511JWaOyPkp39qZmLbsO6WEuJLxQJw3on6QVTugSW3c8YicZniM4g1xH0EGw63BL9kCHJr0/2PpP/VnB7hGf7uOrndimImXnn5iJ52YVJ45jGlYa3HsWAwyuLhyD8HHN/9rwcmRoqmT4pEVG4zGPCcfiPZLLWXOWwdZhpMWPmJg3ScdbQXkQJF+IqSvb+oSd4BuzoJJYNrqeoDF3KtB5TzksO0YCdjoJXLMhFSFCIRGvAYkmkAB1rz/ctecUs1lFdpvcWQr85Qn+al4eaXAzRtNBtFlvR5MD2q4Azs4zbPRP0UfuBjN+AnM8OIWPXzXLoxHOY1i2QVYgS4OglDmTEpO8Cpp1ir37cdAC6mLTuOEWhx5eUim7QY0IeA7Z0YhsA2xsuz5yYAoX+8DTJmf4+1DZKICLjY1gMsMo4RGpHXOjn7pxiBmrmgDwFHxyfVbArT7qJ08xGvq5r1xy0Tkl8Lm1QnG6jjhsx9wgh23EjQZLLyIaSr92J6YEeA06rAobk23nEb6sal92pniPhHl9WXPEeUB6+A7w0s5iC3t/EUxfg=
+  bucket: bookscouter-development-assets
+  region: us-west-2
+  local-dir: public
+  acl: public_read
+  on:
+    repo: RoundSphere/bookscouter-www
+    branch: master
+  cache-control: "max-age=600"
+- provider: s3
+  skip-cleanup: true
+  access_key_id: AKIAJU7OHSZIB66QHHFA
+  secret_access_key:
+    secure: *1
+  bucket: bookscouter-production-assets
+  region: us-west-2
+  local-dir: public
+  acl: public_read
+  on:
+    repo: RoundSphere/bookscouter-www
+    branch: production
+  cache-control: "max-age=600"
+notifications:
+  email:
+  - joe@roundsphere.com
+  slack: bookscouter:DUaa4PdSebtK8kBbbjVheZcx

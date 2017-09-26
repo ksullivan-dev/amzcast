@@ -1,0 +1,18 @@
+@mixin font( $font, $weight: null, $lheight: null ){
+    @if $lheight == null {
+        $lheight: 1.3;
+    }
+    @if $font == $text {
+        @if $weight == null {
+            $weight: 400;
+        }
+    }
+    @if $font == $headline {
+        @if $weight == null {
+            $weight: 700;
+        }
+    }
+    font-family: $font;
+    font-weight: $weight;
+    line-height: $lheight;
+}

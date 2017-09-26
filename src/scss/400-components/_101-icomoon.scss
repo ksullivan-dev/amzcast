@@ -1,0 +1,146 @@
+@font-face {
+    font-family: 'icomoon';
+    src: url('/dist/fonts/icomoon.eot?cjhmdj');
+    src: url('/dist/fonts/icomoon.eot?cjhmdj#iefix') format('embedded-opentype'),
+        url('/dist/fonts/icomoon.ttf?cjhmdj') format('truetype'),
+        url('/dist/fonts/icomoon.woff?cjhmdj') format('woff'),
+        url('/dist/fonts/icomoon.svg?cjhmdj#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.icomoon {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icomoon-athensmade {
+    @extend .icomoon;
+    &::before {
+        content: "\e900";
+    }
+}
+.icomoon-bookscouter {
+    @extend .icomoon;
+    &::before {
+        content: "\e901";
+    }
+}
+.icomoon-home {
+    @extend .icomoon;
+    &::before {
+        content: "\e902";
+    }
+}
+.icomoon-home2 {
+    @extend .icomoon;
+    &::before {
+        content: "\e903";
+    }
+}
+.icomoon-home3 {
+    @extend .icomoon;
+    &::before {
+        content: "\e904";
+    }
+}
+.icomoon-pencil {
+    @extend .icomoon;
+    &::before {
+        content: "\e905";
+    }
+}
+.icomoon-books {
+    @extend .icomoon;
+    &::before {
+        content: "\e920";
+    }
+}
+.icomoon-library {
+    @extend .icomoon;
+    &::before {
+        content: "\e921";
+    }
+}
+.icomoon-price-tag {
+    @extend .icomoon;
+    &::before {
+        content: "\e935";
+    }
+}
+.icomoon-price-tags {
+    @extend .icomoon;
+    &::before {
+        content: "\e936";
+    }
+}
+.icomoon-barcode {
+    @extend .icomoon;
+    &::before {
+        content: "\e937";
+    }
+}
+.icomoon-qrcode {
+    @extend .icomoon;
+    &::before {
+        content: "\e938";
+    }
+}
+.icomoon-credit-card {
+    @extend .icomoon;
+    &::before {
+        content: "\e93f";
+    }
+}
+.icomoon-googleplus {
+    @extend .icomoon;
+    &::before {
+        content: "\ea8b";
+    }
+}
+.icomoon-facebook {
+    @extend .icomoon;
+    &::before {
+        content: "\ea90";
+    }
+}
+.icomoon-twitter {
+    @extend .icomoon;
+    &::before {
+        content: "\ea96";
+    }
+}
+.icomoon-youtube {
+    @extend .icomoon;
+    &::before {
+        content: "\ea9d";
+    }
+}
+.icomoon-appleinc {
+    @extend .icomoon;
+    &::before {
+        content: "\eabe";
+    }
+}
+.icomoon-android {
+    @extend .icomoon;
+    &::before {
+        content: "\eac0";
+    }
+}
+.icomoon-pinterest {
+    @extend .icomoon;
+    &::before {
+        content: "\ead2";
+    }
+}

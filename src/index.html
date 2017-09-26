@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>AmzCast - The Amazon Weather Forecast</title>
+	<meta name="description" content="AmzCast is a weather report showing turbulence in the Amazon A9 algorithm in the recent past. ">
+	<meta name="keywords" content="Amazon, A9, algorithm, Amazon forecast, algorithm changes">
+
+	<!-- Homescreen Icons -->
+	<!--
+	<link href="/dist/images/icons/bookscouter-icon-180.png" rel="apple-touch-icon" sizes="180x180" />
+	<link rel="icon" sizes="192x192" href="/dist/images/icons/bookscouter-icon-180.png">
+	<link rel="icon" type="image/ico" href="/dist/images/icons/favicon-32x32.png">
+	<link rel="icon" type="image/ico" href="/dist/images/icons/favicon-16x16.png">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/dist/images/icons/bookscouter-icon-144.png">
+	<meta name="theme-color" content="#ffffff">
+	-->
+
+	<!-- Social Sharing: FB -->
+	<!--
+	<meta property="og:type" content="website">
+	<meta property="og:image" content="/dist/images/icons/bookscouter-240x240.jpg">
+	<meta property="fb:app_id" content="45509634306">
+	<meta property="og:title" content="BookScouter">
+	<meta property="og:url" content="https://bookscouter.com">
+	<meta property="og:description" content="Compare textbook buyback prices from over 35 online companies with a single search. Selling textbooks online pays you more than college bookstores. BookScouter's buyback price comparison helps you sell your books for the best price.">
+	<meta property="og:site_name" content="BookScouter">
+	-->
+
+	<!-- Social Sharing: Twitter -->
+	<!--
+	<meta property="twitter:card" content="summary">
+	<meta property="twitter:site" content="@bookscouter">
+	<meta property="twitter:title" content="BookScouter">
+	<meta property="twitter:description" content="Compare textbook buyback prices from over 35 online companies with a single search. Selling textbooks online pays you more than college bookstores. BookScouter's buyback price comparison helps you sell your books for the best price.">
+	<meta property="twitter:image" content="/dist/images/icons/bookscouter-240x240.jpg">
+	<meta property="twitter:url" content="https://bookscouter.com">
+	-->
+
+	<meta name="robots" content="index, follow">
+	<meta name="fragment" content="!">
+	<!-- CSS -->
+	<!-- inject:head:css -->
+	<!-- endinject -->
+</head>
+<body class="primary-app flex-parent__column">
+	<!-- Header -->
+	<div id="messageContainer" class="alert-message"></div>
+	<header id="header" class="header flex-parent__column">
+		<div class="width-wrapper header__container flex-child__fill flex-parent__column">
+			<div class="header__main flex-child__auto flex-parent__wrap">
+				<a href="/" title="AmzCast" class="header__logo flex-child__auto">
+					<img src="/dist/images/logos/bks_logo.svg" alt="AmzCast logo">
+				</a>
+				<h1 class="header__title">The Amazon Weather Forecast</h1>
+				<div class="header__icon toggle--menu icon__container flex-child__auto"><i class="icon--menu"></i></div>
+				<div class="header__menu flex-child__auto collapsable collapsed">
+					<ul class="menu menu--primary flex-parent__wrap">
+						<li class="menu__item menu__item--primary flex-child__50"><a href="/" class="menu__link menu__link--primary">Home</a></li>
+						<li class="menu__item menu__item--primary flex-child__50"><a href="/about" class="menu__link menu__link--primary">About</a></li>
+						<li class="menu__item menu__item--primary flex-child__50"><a href="/tips" class="menu__link menu__link--primary">FAQ</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div id="content" class="content flex-child__fill flex-parent__column">
+		<section class="home__current-temperature">
+			<div class="width-wrapper">
+				<div style="padding: 20px; background: red;">Current Temperature Section</div>
+			</div>
+		</section>
+		<section class="home__past-week">
+			<div class="width-wrapper">
+				<div style="padding: 20px; background: blue;">Past Week Section</div>
+			</div>
+		</section>
+		<section class="home__description">
+			<div class="width-wrapper">
+				<div style="padding: 20px; background: pink;">
+					<p>AmzCast is a weather report showing turbulence in the Amazon A9 algorithm in the recent past.</p>
+					<p><strong>The colder, the fewer changes we detected. The warmer, the more dynamic the changes during the day. 70° is perfectly average!</p>
+				</div>
+			</div>
+		</section>
+		<section class="home__chart">
+			<div class="width-wrapper">
+				<div style="padding: 20px; background: purple;">
+					<div class="chart-wrapper">
+					    <canvas id="historic-chart" />
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<!-- Modals -->
+	<div id="modals"></div>
+	<script src="/dist/js/main.js" async></script>
+</body>
+</html>

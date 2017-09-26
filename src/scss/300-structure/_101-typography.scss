@@ -1,0 +1,256 @@
+body {
+    color: $dark-gray;
+    @include font($text);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 14px;
+    @include tablet {
+        font-size: 18px;
+    }
+}
+h1, h2, h3, h4, h5, h6 {
+    @include font($headline);
+}
+
+h1 {
+    font-size: 28px;
+    @include tablet {
+        font-size: 36px;
+    }
+}
+
+h2 {
+    font-size: 18px;
+    @include tablet {
+        font-size: 28px;
+    }
+}
+
+strong {
+    font-weight: 700;
+}
+a, a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+.content a:not( .styled-link, .btn ) {
+    color: $accent;
+}
+.content ul:not( .styled-list ) {
+    list-style: disc;
+    margin: 20px 0;
+    padding-left: 30px;
+    li {
+        margin-bottom: 10px;
+    }
+}
+.content p:not( .styled-p ) {
+    margin-bottom: 12px;
+}
+em {
+    font-style: italic;
+}
+
+.white-text {
+    color: $white;
+}
+
+// hero text
+.hero__title {
+    font-size: 36px;
+    font-weight: 200;
+    strong {
+        font-weight: 400;
+    }
+    @include tablet {
+        font-size: 52px;
+    }
+}
+
+// Section titles
+.section__title {
+	font-size: 28px;
+    letter-spacing: 0.39px;
+    text-align: center;
+    margin-bottom: 10px;
+    @include tablet {
+        font-size: 36px;
+        letter-spacing: -0.9px;
+        font-weight: normal;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
+.section__subtitle {
+    font-size: 18px;
+    color: $gray;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 20px 0;
+    @include tablet {
+        font-size: 20px;
+    }
+}
+
+// footer
+.site-footer {
+    color: $light-gray;
+}
+.copyright {
+    color: transparentize($off-white, 0.4);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+// Social menu
+.menu__link--social {
+    color: $white;
+    &::before {
+        font-size: 32px;
+    }
+    &.icomoon-facebook,
+    &.icomoon-twitter {
+        &::before {
+            font-size: 24px;
+        }
+    }
+}
+
+// sitelink menu
+.menu__link--sitelinks {
+    font-size: 14px;
+    color: $white;
+}
+
+// buttons/cta
+.btn {
+    font-size: 18px;
+    font-weight: 700;
+}
+.cta__login {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.cta__register {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+// search select
+.search__select {
+    &::after {
+        font-weight: bold;
+    }
+}
+
+// results select
+.select--results {
+    &::before {
+        font-weight: bold;
+        color: darken( $gray, 8% );
+    }
+}
+
+// search results
+.result__term {
+    font-size: 18px;
+    color: $accent;
+}
+.results__sort {
+    font-size: 16px;
+}
+.book__title {
+    font-weight: 400;
+    font-size: 16px;
+    @include tablet {
+        font-size: 20px;
+    }
+}
+.highlight {
+    color: $accent;
+}
+
+// instructions
+.instruction__number {
+    font-size: 52px;
+    font-family: $headline;
+    color: $accent;
+}
+.instruction__title {
+    font-family: $headline;
+    font-size: 28px;
+    text-transform: uppercase;
+}
+
+// Book/prices page
+.content--sell {
+    .book__title {
+        color: $accent;
+    }
+}
+.price__heading {
+    font-weight: normal;
+}
+.amazon-info {
+    font-size: 20px;
+    .book__label {
+        font-size: 14px;
+    }
+}
+.price__item {
+    .btn {
+        font-size: 14px;
+        @include large-phone {
+            font-size: 18px;
+        }
+    }
+}
+
+// Home About Section
+.home__about--heading {
+    font-size: 28px;
+    color: $primary;
+    letter-spacing: -0.39px;
+    font-weight: normal;
+    @include large-phone {
+        font-size: 36px;
+        letter-spacing: -0.5px;
+    }
+}
+
+// Home Blog Section
+.blog-categories {
+    .btn {
+        color: $dark-gray;
+        text-transform: capitalize;
+        letter-spacing: -0.44px;
+        font-size: 14px;
+    }
+}
+.blog-categories__heading {
+    font-size: 18px;
+    color: $dark-gray;
+    letter-spacing: 1.2px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    @include medium-phone {
+        font-weight: normal;
+    }
+}
+// Home Video
+.video__title {
+    font-weight: 400;
+    font-size: 36px;
+    color: $primary;
+    letter-spacing: -0.9px;
+}
+// Why BookScouter
+.why-bookscouter__title {
+    font-weight: 400;
+    color: $dark-gray;
+    letter-spacing: -0.3px;
+    font-size: 24px;
+}

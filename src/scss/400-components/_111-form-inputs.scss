@@ -1,0 +1,209 @@
+.input__wrapper {
+    position: relative;
+    box-sizing: border-box;
+    &.input__wrapper--no-border {
+        border: 0;
+    }
+    &.input__wrapper--remember {
+        margin: 10px 0;
+    }
+}
+.input--text {
+    @include input;
+}
+// Labelize inputs
+.input__wrapper--labelize {
+    border-bottom: 1px solid $gray;
+    margin: 30px 0;
+}
+.label--labelize {
+    position: absolute;
+    bottom: 6px;
+    left: 0;
+    transition: 0.2s all;
+    &.labelize {
+        bottom: 100%;
+        font-size: 11px;
+        line-height: 1;
+        margin-bottom: 3px;
+    }
+}
+.input__label {
+    color: darken( $gray, 8% );
+    line-height: 20px;
+}
+.input--labelize {
+    padding: 6px 0;
+    line-height: 20px;
+    position: relative;
+    z-index: 2;
+    &:focus {
+        outline: none;
+        ~ .label--labelize {
+            @extend .labelize;
+        }
+    }
+}
+
+.form__btn--single {
+    width: 100%;
+}
+.inline-input {
+    border-bottom: 0;
+    .input__label {
+        padding-right: 10px;
+    }
+}
+
+// Styled Checkbox
+.checkbox__input {
+    position: absolute;
+    clip: rect( 0,0,0,0 );
+    &:checked + .checkbox__graphic {
+        &::before,
+        &::after {
+            display: block;
+        }
+    }
+}
+.checkbox__graphic {
+    display: block;
+    height: 20px;
+    width: 20px;
+    background: $gray;
+    border-radius: 2px;
+    position: relative;
+    margin-left: 8px;
+    transform: scale( 0.8 );
+    @include tablet {
+        transform: scale( 1 );
+    }
+    &::before,
+    &::after {
+        @include before;
+        bottom: 3px;
+        left: 17%;
+        transform: translate( -50%, 0 ) rotate( 45deg );
+        transform-origin: bottom right;
+        background: $dark-gray;
+        border-radius: 2px;
+        display: none;
+    }
+    &::before {
+        height: 14px;
+        width: 4px;
+        margin-left: 3px;
+    }
+    &::after {
+        width: 10px;
+        height: 4px;
+    }
+}
+.checkbox__label {
+    cursor: pointer;
+    ~ label {
+        cursor: pointer;
+    }
+}
+
+// Expiration date
+input[data-value="exp_month"] {
+    width: 40px;
+    margin-right: 20px;
+}
+input[data-value="exp_year"] {
+    width: 70px;
+}
+.expiration {
+    margin-right: 20px;
+    position: relative;
+    &::after {
+
+    }
+}
+.expiration__separator {
+    position: absolute;
+    height: calc( 100% + 1px );
+    width: 20px;
+    left: 40px;
+    top: 0;
+    background: $white;
+    color: darken( $gray, 8% );
+    padding: 6px 0;
+    box-sizing: border-box;
+    text-align: center;
+    opacity: 0;
+    &::after {
+        content: '/';
+    }
+    input:focus ~ &,
+    .labelize ~ & {
+        opacity: 1;
+    }
+    .error & {
+        border-bottom: 1px solid $negative;
+    }
+}
+
+// Input with icon
+.input__wrapper--with-icon {
+    border: 1px solid $gray;
+    margin-top: 6px;
+    .icon--pencil {
+        position: absolute;
+        top: 50%;
+        right: 12px;
+        transform: translate( 0, -50% ) rotate( 45deg ) scale( 1.1 );
+    }
+}
+.input--with-icon {
+    background: $light-gray;
+    padding: 10px;
+    padding-right: 28px;
+    height: 100%;
+    &:focus {
+        padding-right: 10px;
+        outline: none;
+        background: $white;
+        + .icon--pencil {
+            display: none;
+        }
+    }
+}
+
+
+// Input validation
+.validate-wrapper {
+    position: relative;
+    .message__text {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        font-size: 11px;
+        margin-top: 2px;
+        &.message--no-edit {
+            display: block;
+            padding: 2px;
+            box-shadow: 0 2px 4px transparentize( $black, 0.8 );
+            background: $white;
+            width: 100%;
+            box-sizing: border-box;
+            z-index: 1;
+        }
+    }
+    &.error {
+        border: 1px solid $negative;
+        .message__text {
+            color: $negative;
+        }
+    }
+    &.success {
+        border: 1px solid $positive;
+        .message__text {
+            color: $positive;
+        }
+    }
+    &.validate-wrapper--no-border {
+        border: 0;
+    }
+}

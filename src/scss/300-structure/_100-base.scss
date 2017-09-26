@@ -1,0 +1,41 @@
+html {
+    background: $dark-gray;
+}
+body {
+    min-width: 320px;
+    background: $white;
+    min-height: 100vh;
+}
+.width-wrapper {
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    @include tablet {
+        padding: 0 30px;
+    }
+    @include desktop {
+        padding: 0 40px;
+    }
+}
+
+section {
+    padding: 30px 0;
+    @include large-phone {
+        padding: 48px 0;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+.hide-on-internal {
+    visibility: hidden;
+    opacity: 0;
+    .home & {
+        visibility: visible;
+        opacity: 1;
+    }
+}

@@ -1,0 +1,51 @@
+// To vertically center the loading graphic
+.content > section {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+}
+.animated-logo {
+    max-width: 100px;
+    margin: auto;
+    display: block;
+    width: 50%;
+    .loading--icon & {
+        width: auto;
+        height: 40px;
+        .book {
+            fill: darken( $gray, 10% );
+        }
+    }
+    .book {
+        animation: Book1 1.2s ease-in-out 0.2s infinite;
+        fill: $gray;
+    }
+    $number: 9;
+    @for $i from 1 through $number {
+        $pctRange: 100/$number;
+        $pctEnd: $pctRange * $i;
+        $pctStart: $pctEnd - $pctRange;
+        @keyframes Book#{ $i } {
+            from, #{ $pctStart }% {
+                fill: $gray;
+            }
+            to, #{ $pctEnd }% {
+                fill: $accent;
+            }
+        }
+        @keyframes BookButton#{ $i } {
+            from, #{ $pctStart }% {
+                fill: darken( $gray, 10% );
+            }
+            to, #{ $pctEnd }% {
+                fill: $white;
+            }
+        }
+        .book:nth-child( #{ $i } ) {
+            animation-name: Book#{ $i };
+            .loading--icon & {
+                animation-name: BookButton#{ $i };
+            }
+        }
+    }
+}

@@ -1,0 +1,55 @@
+.alert {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.6s, visibility 0.6s;
+    height: 0;
+    overflow: hidden;
+    position: relative;
+    &.active {
+        padding: 20px;
+        padding-left: 60px;
+        box-sizing: border-box;
+        border-width: 2px;
+        border-style: solid;
+        border-radius: 3px;
+        background: $white;
+        opacity: 1;
+        visibility: visible;
+        height: auto;
+        &::before {
+            @include before;
+            height: 100%;
+            width: 40px;
+            left: 0;
+            top: 0;
+        }
+    }
+    &--error {
+        border-color: $negative;
+        &::before {
+            background: $negative;
+        }
+    }
+    &--success {
+        border-color: $positive;
+        &::before {
+            background: $positive;
+        }
+    }
+    &--info {
+        border-color: $caution;
+        &::before {
+            background: $caution;
+        }
+    }
+    .alert__icon {
+        position: absolute;
+        top: 50%;
+        left: 12px;
+        transform: translate( 0, -50% );
+        &::before,
+        &::after {
+            background: $white;
+        }
+    }
+}
