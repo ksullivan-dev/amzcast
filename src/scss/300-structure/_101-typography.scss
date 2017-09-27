@@ -85,30 +85,6 @@ a, a:hover {
         margin-bottom: 20px;
     }
 }
-.section__subtitle {
-    font-size: 18px;
-    color: $gray;
-    text-transform: uppercase;
-    text-align: center;
-    margin: 20px 0;
-    @include tablet {
-        font-size: 20px;
-    }
-}
-
-// Social menu
-.menu__link--social {
-    color: $white;
-    &::before {
-        font-size: 32px;
-    }
-    &.icomoon-facebook,
-    &.icomoon-twitter {
-        &::before {
-            font-size: 24px;
-        }
-    }
-}
 
 // buttons/cta
 .btn {
@@ -167,5 +143,18 @@ a, a:hover {
         strong {
             color: $primary;
         }
+    }
+}
+
+// Chart label
+.chart__label {
+    font-size: 14px;
+    font-weight: bold;
+    color: $primary;
+    @include tablet {
+        font-size: 18px;
+    }
+    @include desktop {
+        font-size: 22px;
     }
 }

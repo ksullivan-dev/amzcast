@@ -1,0 +1,13 @@
+.home__chart {
+    padding-left: 20px;
+    position: relative;
+}
+.chart__label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: rotate(-90deg) translate( 10%, -340% )
+}
+.chart-wrapper {
+    position: relative;
+}

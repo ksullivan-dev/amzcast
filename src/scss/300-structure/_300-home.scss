@@ -24,6 +24,11 @@
 }
 .home__container--right {
     flex: 1 1 100%;
+    max-width: 100%;
+    @include tablet {
+        max-width: calc( 100% - 320px );
+        flex: 1 1 calc( 100% - 320px );
+    }
     .right-wrapper {
         display: block;
         @include desktop {
@@ -52,6 +57,9 @@
             padding-left: 24px;
             box-sizing: border-box;
         }
+    }
+    .width-wrapper {
+        max-width: 800px;
     }
 }
 .centered-container {

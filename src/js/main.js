@@ -39,20 +39,24 @@
 			_.each( data, function( item ){
 				item.dayOfWeek = Moment( item.date ).format( 'dddd' );
 				item.dayOfMonth = Moment( item.date ).format( 'MMMM Do' );
-				item.dateString = Moment( item.date ).format( 'dddd MMM d, YYYY' );
+				item.dateString = Moment( item.date ).format( 'dddd MMM D, YYYY' );
 				item.displayTemp = item.value + '\xB0';
 				if( item.value >= 85 ){
 					item.condition = "Very Dynamic";
+					item.iconSlug = 'sunny';
 				} else if( item.value < 85 && item.value >= 75 ){
 					item.condition = "Somewhat Dynamic";
+					item.iconSlug = 'partlycloudy';
 				} else if( item.value < 75 && item.value >= 65 ){
 					item.condition = "Perfectly Average";
+					item.iconSlug = 'cloudy';
 				} else if( item.value < 65 && item.value >= 55 ){
 					item.condition = "Somewhat Calm";
+					item.iconSlug = 'extracloudy';
 				} else if( item.value < 55 ){
 					item.condition = "Very Calm";
+					item.iconSlug = 'snowy';
 				}
-				item.conditionSlug = item.condition.toLowerCase().replace( ' ', '-' );
 			});
 			return data;
 		},
@@ -85,7 +89,7 @@
 					datasets: [
 						{
 							data: self.chartData.valueArray,
-							backgroundColor: 'rgba( 200, 200, 0, 0.5 )',
+							backgroundColor: '#F4C544',
 						}
 					]
 				},
@@ -111,6 +115,7 @@
 				},
 				scales: {
 					xAxes: [{
+						barPercentage: 1.0,
 						gridLines: {
 							display: false,
 						},
@@ -121,10 +126,6 @@
 					yAxes: [{
 						ticks: {
 							min: 40
-						},
-						scaleLabel: {
-							display: true,
-							labelString: 'Average Temperature'
 						}
 					}]
 				}
