@@ -1,28 +1,10 @@
-.toggle--menu,
-.toggle--search {
+.toggle--menu {
     display: block;
     width: 44px;
     height: 44px;
     position: relative;
     cursor: pointer;
-}
-.toggle--menu {
     @include desktop {
-        display: none;
-    }
-}
-.toggle--search {
-    margin-left: 0;
-    margin-right: -10px;
-    .icon--search {
-        position: absolute;
-        top: 10px;
-        left: 14px;
-    }
-    @include large-phone {
-        display: none;
-    }
-    .home & {
         display: none;
     }
 }
@@ -31,23 +13,24 @@
 .icon--menu {
     top: 50%;
     left: 50%;
-    transform: translate( -50%, -50% );
+    transform: translate( -50%, -50.5% );
     width: 32px;
     display: block;
-    background: $dark-gray;
-    height: 4px;
+    background: $white;
+    height: 3px;
     position: absolute;
     transition: all 400ms ease-in-out;
+    border-radius: 1px;
     &::before,
     &::after {
         @extend .icon--menu;
         content: '';
     }
     &::before {
-        top: -175%;
+        top: -8px;
     }
     &::after {
-        top: 275%;
+        top: 10px;
     }
     .open & {
         transform: translate( -50%, -50% ) rotate( 45deg );
@@ -58,80 +41,6 @@
             transform-origin: center center;
             top: 2px;
         }
-    }
-}
-
-// Search Icon
-.icon--search {
-    position: relative;
-    border: 3px solid $dark-gray;
-    border-radius: 50%;
-    height: 16px;
-    width: 16px;
-    box-sizing: border-box;
-    display: inline-block;
-    &::after {
-        @include before;
-        background: $dark-gray;
-        height: 4px;
-        transform: rotate( 45deg ) translate( -25%, -25% );
-        transform-origin: center left;
-        width: 100%;
-        top: 100%;
-        left: 100%;
-    }
-}
-
-// Clear Icon
-.icon--clear {
-    position: relative;
-    right: 0;
-    top: 0;
-    height: 16px;
-    width: 16px;
-    cursor: pointer;
-    &::before,
-    &::after {
-        @include before;
-        height: 100%;
-        width: 4px;
-        background: $gray;
-        top: 50%;
-        left: 50%;
-        transform: translate( -50%, -50% ) rotate( 45deg );
-        transform-origin: center center;
-    }
-    &::after {
-        transform: translate( -50%, -50% ) rotate( -45deg );
-    }
-}
-
-// Login icon
-.icon--login {
-    display: block;
-    height: 1.4285714286em; // 20/14
-    width: 1.4285714286em; // 20/14
-    position: relative;
-    background: $dark-gray;
-    border: 3px solid $dark-gray;
-    border-radius: 50%;
-    overflow: hidden;
-    &::before,
-    &::after {
-        @include before;
-        background: $white;
-        border-radius: 50%;
-        height: 38%;
-        width: 38%;
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translate( -50%, 0 );
-    }
-    &::after {
-        height: 100%;
-        width: 100%;
-        top: 50%;
     }
 }
 
