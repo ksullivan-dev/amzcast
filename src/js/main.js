@@ -24,6 +24,18 @@
 				item.dayOfMonth = Moment( item.date ).format( 'MMMM Do' );
 				item.dateString = Moment( item.date ).format( 'dddd MMM d, YYYY' );
 				item.displayTemp = item.value + '\xB0';
+				if( item.value >= 85 ){
+					item.condition = "Very Dynamic";
+				} else if( item.value < 85 && item.value >= 75 ){
+					item.condition = "Somewhat Dynamic";
+				} else if( item.value < 75 && item.value >= 65 ){
+					item.condition = "Perfectly Average";
+				} else if( item.value < 65 && item.value >= 55 ){
+					item.condition = "Somewhat Calm";
+				} else if( item.value < 55 ){
+					item.condition = "Very Calm";
+				}
+				item.conditionSlug = item.condition.toLowerCase().replace( ' ', '-' );
 			});
 			return data;
 		},
@@ -41,7 +53,7 @@
 		fakeData: function(){
 			var data = [];
 			while( data.length < 30 ){
-				data.push({ date: Moment().subtract( data.length, 'days' ), value: Math.floor( Math.random() * 40 ) + 60 });
+				data.push({ date: Moment().subtract( data.length, 'days' ), value: Math.floor( Math.random() * 50 ) + 50 });
 			}
 			return data;
 		},
