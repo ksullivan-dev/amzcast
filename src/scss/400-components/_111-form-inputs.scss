@@ -106,45 +106,6 @@
     }
 }
 
-// Expiration date
-input[data-value="exp_month"] {
-    width: 40px;
-    margin-right: 20px;
-}
-input[data-value="exp_year"] {
-    width: 70px;
-}
-.expiration {
-    margin-right: 20px;
-    position: relative;
-    &::after {
-
-    }
-}
-.expiration__separator {
-    position: absolute;
-    height: calc( 100% + 1px );
-    width: 20px;
-    left: 40px;
-    top: 0;
-    background: $white;
-    color: darken( $gray, 8% );
-    padding: 6px 0;
-    box-sizing: border-box;
-    text-align: center;
-    opacity: 0;
-    &::after {
-        content: '/';
-    }
-    input:focus ~ &,
-    .labelize ~ & {
-        opacity: 1;
-    }
-    .error & {
-        border-bottom: 1px solid $negative;
-    }
-}
-
 // Input with icon
 .input__wrapper--with-icon {
     border: 1px solid $gray;

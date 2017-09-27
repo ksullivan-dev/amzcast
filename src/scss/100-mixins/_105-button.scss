@@ -16,7 +16,7 @@
     box-sizing: border-box;
     margin: 0;
     &:hover {
-        background: $dark-primary;
+        background: darken( $primary, 10% );
         color: $white;
     }
     &--disabled,

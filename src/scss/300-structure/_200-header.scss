@@ -1,32 +1,8 @@
 .header {
-    box-shadow: inset 0px -4px 12px transparentize($black, 0.9);
     position: relative;
     z-index: 2;
-    background: #F4F9FD;
-    background-image: url( '/dist/images/background_images/homepage_books.jpg' );
-    background-size: 350px auto;
-    background-position: right 60px;
-    background-repeat: no-repeat;
+    background: $primary;
     box-sizing: border-box;
-    @include desktop {
-        background-position: right 100px;
-    }
-    @include desktop-plus {
-        background-position: right 70px;
-    }
-    @include desktop-super {
-        background-size: 30%;
-    }
-    .home & {
-        min-height: 95vh;
-        @media screen and ( max-width: 849px ){
-            background-size: 60%;
-            background-position: right calc( 50% - 20px );
-        }
-        @include desktop {
-            min-height: 0;
-        }
-    }
 }
 .header__container {
     position: relative;
@@ -47,60 +23,6 @@
         padding: 20px 0;
     }
 }
-.header__search {
-    padding: 0 20px;
-    box-sizing: border-box;
-    position: absolute;
-    top: 100%;
-    width: 100%;
-    left: 0;
-    height: auto;
-    @include large-phone {
-        top: auto;
-        position: relative;
-        padding: 0;
-        margin: 20px 0 40px;
-        &.collapsable.collapsed {
-            visibility: visible;
-            opacity: 1;
-        }
-    }
-    @include desktop-plus {
-        margin-top: 10px;
-    }
-
-    .home & {
-        position: relative;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: calc( 100% + 40px );
-        margin: -20px -20px 0;
-        display: flex;
-        flex-direction: column;
-        flex: 1 1;
-        @include large-phone {
-            width: 100%;
-            margin: -20px 0 0;
-        }
-        @include desktop {
-            margin: 80px 0 120px;
-        }
-        &.collapsable.collapsed {
-            visibility: visible;
-            opacity: 1;
-        }
-        .input__wrapper--search {
-            @include large-phone {
-                width: 100%;
-                box-sizing: border-box;
-                margin-left: 0;
-                margin-top: 50px;
-                margin-bottom: auto;
-            }
-        }
-    }
-}
 .header__logo {
     width: 68%;
     margin-right: auto;
@@ -117,34 +39,6 @@
     margin-left: 10px;
     order: 4;
     @include tablet {
-        margin-left: 20px;
-    }
-}
-.header__cta {
-    justify-content: space-between;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 3;
-    width: 100%;
-    .cta__register {
-        border-radius: 0;
-        @include tablet {
-            border-radius: 2px;
-        }
-    }
-    @include tablet {
-        position: relative;
-        order: 3;
-        width: auto;
-        flex: 0 1 auto;
-        top: 0;
-        &.collapsable.collapsed {
-            visibility: visible;
-            opacity: 1;
-        }
-    }
-    @include desktop-plus {
         margin-left: 20px;
     }
 }
@@ -171,15 +65,5 @@
     @include desktop-plus {
         order: 2;
         width: auto;
-    }
-}
-.header__instructions {
-    background: $white;
-    box-shadow: 0 -8px 20px transparentize( $dark-gray, 0.8 );
-    display: none;
-    .home & {
-        @include large-phone {
-            display: block;
-        }
     }
 }
