@@ -17,6 +17,23 @@
 			this.renderCurrent( this.data[0] );
 			this.renderWeek( this.data.slice( 0, 7 ) );
 			this.renderChart();
+			$( document ).click( '.toggle--menu', this.showMenu );
+			$( document ).click( this.closeMenu );
+		},
+		showMenu: function( e ){
+			var el = $( e.target );
+			if( ! el.hasClass( 'header__icon' ) ){
+				el = el.closest( '.header__icon' );
+			}
+			el[ el.hasClass( 'open' ) ? 'removeClass' : 'addClass' ]( 'open' );
+			el.siblings( '.header__menu' ).toggleClass( 'collapsed' );
+		},
+		closeMenu: function( e ){
+			if( $( '.header__icon' ).hasClass( 'open' ) && ! $( e.target ).closest( '.header' ).length ){
+				e.preventDefault();
+				$( '.header__icon' ).removeClass( 'open' );
+				$( '.header__menu' ).addClass( 'collapsed' );
+			}
 		},
 		parseData: function( data ){
 			_.each( data, function( item ){
