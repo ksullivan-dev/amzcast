@@ -7,10 +7,9 @@
 .home__container--left {
     background: $light-gray;
     box-sizing: border-box;
-    flex: 1 1;
+    flex: 1 1 100%;
     @include tablet {
-        width: 260px;
-        flex: 0 0;
+        flex: 0 0 320px;
     }
     .home__current-temperature {
         background: $white;
@@ -24,17 +23,34 @@
     }
 }
 .home__container--right {
-    flex: 1 1;
-    .width-wrapper {
+    flex: 1 1 100%;
+    .right-wrapper {
         display: block;
         @include desktop {
             display: flex;
+            padding-top: 80px;
+            align-items: center;
+            justify-content: center;
         }
     }
     .home__current-temperature {
         display: none;
         @include tablet {
             display: block;
+        }
+        @include desktop {
+            padding: 10px 24px 10px 0;
+            border-right: 1px solid $gray;
+            flex: 0 1 280px;
+            box-sizing: border-box;
+        }
+    }
+    .home__description {
+        @include desktop {
+            flex: 0 1 260px;
+            padding-top: 10px;
+            padding-left: 24px;
+            box-sizing: border-box;
         }
     }
 }

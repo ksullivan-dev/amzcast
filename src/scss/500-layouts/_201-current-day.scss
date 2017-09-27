@@ -11,3 +11,23 @@
         left: -4px;
     }
 }
+.home__container--right {
+    .current-day {
+        max-width: 100%;
+        justify-content: center;
+        @include desktop {
+            padding: 0;
+        }
+    }
+    .day__icon {
+        width: 140px;
+    }
+    .day__content {
+        margin-left: 20px;
+    }
+    .day__temp {
+        &::after {
+            left: -12px;
+        }
+    }
+}

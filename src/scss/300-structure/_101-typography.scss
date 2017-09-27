@@ -6,7 +6,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     font-size: 14px;
     @include tablet {
-        font-size: 18px;
+        font-size: 16px;
     }
 }
 h1, h2, h3, h4, h5, h6 {
@@ -132,6 +132,14 @@ a, a:hover {
     font-size: 16px;
     font-weight: bold;
 }
+.home__container--right {
+    .day__condition {
+        font-size: 32px;
+    }
+    .day__temp {
+        font-size: 120px;
+    }
+}
 
 // Weekly Temps
 .weekly__temp {
@@ -146,4 +154,18 @@ a, a:hover {
 }
 .weekly__dayOfWeek {
     font-weight: bold;
+}
+
+// Description
+.home__description {
+    color: $white;
+    strong {
+        color: $accent;
+    }
+    @include tablet {
+        color: $primary;
+        strong {
+            color: $primary;
+        }
+    }
 }
