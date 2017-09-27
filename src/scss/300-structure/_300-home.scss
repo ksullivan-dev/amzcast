@@ -1,0 +1,38 @@
+.content {
+    flex-wrap: wrap;
+    @include tablet {
+        flex-wrap: nowrap;
+    }
+}
+.home__container--left {
+    background: $light-gray;
+    box-sizing: border-box;
+    flex: 1 1;
+    @include tablet {
+        width: 260px;
+        flex: 0 0;
+    }
+    .home__current-temperature {
+        background: $white;
+        padding: 20px;
+        margin: 0 -20px;
+        @include tablet {
+            display: none;
+        }
+    }
+}
+.home__container--right {
+    flex: 1 1;
+    .width-wrapper {
+        display: block;
+        @include desktop {
+            display: flex;
+        }
+    }
+    .home__current-temperature {
+        display: none;
+        @include tablet {
+            display: block;
+        }
+    }
+}
