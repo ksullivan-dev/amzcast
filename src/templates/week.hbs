@@ -1,9 +1,15 @@
-{{# each Day }}
-    <div class="week__day flex-parent__center-both">
-        <div class="day__temp flex-child">{{ displayTemp }} - {{ condition }} - {{ conditionSlug }}</div>
-        <div class="day__date flex-child">
-            <div class="day__dayOfWeek">{{ dayOfWeek }}</div>
-            <div class="day__dayOfMonth">{{ dayOfMonth }}</div>
+<div class="centered-container">
+    <h2 class="section__title">Weather for Past Week</h2>
+    {{# each Day }}
+        <div class="weekly flex-parent__center-cross {{# if @first }}first{{/ if }}">
+            <div class="weekly__temp flex-child">{{ value }}</div>
+            <div class="weekly__date flex-child">
+                <div class="weekly__dayOfWeek">{{ dayOfWeek }}</div>
+                <div class="weekly__dayOfMonth">{{ dayOfMonth }}</div>
+            </div>
+            <div class="weekly__icon flex-child">
+                <img src="/dist/images/icons/{{ iconSlug }}.svg" alt="{{ condition }} icon" />
+            </div>
         </div>
-    </div>
-{{/ each }}
+    {{/ each }}
+</div>
