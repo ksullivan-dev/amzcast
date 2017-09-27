@@ -1,5 +1,10 @@
-<div class="current-day">
-    <div>Very Dynamic</div>
-    <div>{{ Day.displayTemp }}</div>
-    <div>{{ Day.dateString }}</div>
+<div class="current-day flex-parent">
+    <div class="day__icon flex-child">
+        <img src="/dist/images/icons/{{ Day.iconSlug }}.svg" alt="{{ condition }} icon" />
+    </div>
+    <div class="day__content flex-child">
+        <div class="day__condition">Very Dynamic</div>
+        <div class="day__temp">{{ Day.value }}</div>
+        <div class="day__date">{{ Day.dateString }}</div>
+    </div>
 </div>

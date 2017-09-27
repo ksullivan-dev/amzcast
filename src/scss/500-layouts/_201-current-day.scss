@@ -1,0 +1,13 @@
+.day__icon {
+    width: 90px;
+}
+.day__content {
+    margin-left: 10px;
+}
+.day__temp {
+    &::after {
+        content: "\00b0";
+        position: relative;
+        left: -4px;
+    }
+}

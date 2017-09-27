@@ -14,8 +14,10 @@
     }
     .home__current-temperature {
         background: $white;
-        padding: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
         margin: 0 -20px;
+        box-sizing: border-box;
         @include tablet {
             display: none;
         }

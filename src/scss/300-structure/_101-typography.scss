@@ -113,3 +113,20 @@ a, a:hover {
     font-size: 18px;
     font-weight: 700;
 }
+
+// Sidebar Current Temp
+.day__content {
+    color: $primary;
+    line-height: 1;
+}
+.day__condition {
+    font-size: 24px;
+}
+.day__temp {
+    font-size: 72px;
+    letter-spacing: -1.71px;
+}
+.day__date {
+    font-size: 16px;
+    font-weight: bold;
+}

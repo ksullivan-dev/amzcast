@@ -15,16 +15,16 @@ body {
     @include tablet {
         padding: 0 30px;
     }
-    @include desktop {
-        padding: 0 40px;
-    }
+    // @include desktop {
+    //     padding: 0 40px;
+    // }
 }
 
 section {
-    padding: 30px 0;
-    @include large-phone {
-        padding: 48px 0;
-    }
+    padding: 40px 0;
+    // @include large-phone {
+    //     padding: 48px 0;
+    // }
 }
 
 img {
