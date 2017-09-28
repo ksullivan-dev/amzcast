@@ -105,11 +105,14 @@
 				tooltips: {
 					mode: 'index',
 					callbacks: {
-						label: function( item ){
-							return item.yLabel + '\xB0';
+						label: function(){
+							return '';
+						},
+						beforeTitle: function( item ){
+							return Moment( item.xLabel ).format( 'MMM D, YYYY' );
 						},
 						title: function( item ){
-							return "Amazon Temperature for " + Moment( item.xLabel ).format( 'MMM D, YYYY' );
+							return "Amazon Temperature: " + item[0].yLabel + '\xB0';
 						}
 					}
 				},
