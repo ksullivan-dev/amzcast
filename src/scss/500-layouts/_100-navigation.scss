@@ -12,14 +12,14 @@
 // primary
 .menu--primary {
     border-top: 1px solid $gray;
-    @include desktop {
+    @include tablet {
         border: none;
     }
 }
 .menu__item--primary {
     box-sizing: border-box;
     border-bottom: 1px solid $gray;
-    @include desktop {
+    @include tablet {
         flex: 0 0 auto;
         border: none;
         background: none;
@@ -34,9 +34,9 @@
     padding: 10px;
     line-height: 1;
 	letter-spacing: 1px;
-    @include desktop {
+    @include tablet {
         padding: 0;
-        margin: 10px 12px;
+        margin: 0 20px;
         .menu__item:last-child & {
             margin-right: 0;
         }

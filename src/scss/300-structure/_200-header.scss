@@ -9,17 +9,21 @@
     padding-top: 20px;
     padding-bottom: 20px;
     margin-bottom: 40px;
+    @include tablet {
+        margin-bottom: 0;
+    }
 }
 .header__logo {
     width: 68%;
     margin-right: auto;
-    max-width: 280px;
+    max-width: 180px;
+    margin-top: 8px;
     img {
         display: block;
         margin-top: -10px;
     }
-    @include large-phone {
-        width: 300px;
+    @include tablet {
+        margin-right: 26px;
     }
 }
 .header__title {
@@ -31,13 +35,18 @@
     background: $accent;
     text-align: center;
     box-sizing: border-box;
+    @include tablet {
+        position: relative;
+        width: auto;
+        top: auto;
+        background: none;
+        text-align: left;
+        padding: 0;
+        margin-right: auto;
+    }
 }
 .header__icon {
     margin-left: 10px;
-    order: 4;
-    @include tablet {
-        margin-left: 20px;
-    }
 }
 .header__menu {
     position: absolute;
@@ -45,18 +54,17 @@
     left: 0;
     background: $white;
     width: 100%;
-    @include desktop {
+    @include tablet {
         position: relative;
         top: 0;
-        order: 4;
         background: none;
+        width: auto;
         &.collapsable.collapsed {
             visibility: visible;
             opacity: 1;
         }
     }
     @include desktop-plus {
-        order: 2;
         width: auto;
     }
 }

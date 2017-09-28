@@ -67,6 +67,24 @@ a, a:hover {
     font-size: 16px;
     color: $primary;
     line-height: 16px;
+    @include tablet {
+        color: $gray;
+    }
+}
+
+// Nav text
+.menu__link--primary {
+    color: $white;
+    font-weight: bold;
+    &:hover {
+        color: darken( $accent, 15% );
+    }
+    &.active {
+        color: $accent;
+        &:hover {
+            color: darken( $accent, 15% );
+        }
+    }
 }
 
 // Section titles

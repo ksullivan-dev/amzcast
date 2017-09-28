@@ -4,7 +4,7 @@
     height: 44px;
     position: relative;
     cursor: pointer;
-    @include desktop {
+    @include tablet {
         display: none;
     }
 }
