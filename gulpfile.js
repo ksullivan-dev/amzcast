@@ -97,7 +97,7 @@ gulp.task('sass-dev', ['sass-compile-dev'], function(){
 	return gulp.src('src/index.html')
 		.pipe(replace(
 			/<!-- inject:head:css -->/g,
-			'<link href="./dist/css/style.css" rel="stylesheet" />'
+			'<link href="dist/css/style.css" rel="stylesheet" />'
 		))
 		.pipe(gulp.dest(PATH.WEB_ROOT));
 });
