@@ -1,51 +1,44 @@
 // To vertically center the loading graphic
-.content > section {
-    // display: flex;
-    // flex-direction: column;
-    // flex: 1 1 auto;
-}
+// .content > section {
+//     display: flex;
+//     flex-direction: column;
+//     flex: 1 1 auto;
+// }
 .animated-logo {
-    max-width: 100px;
+    max-width: 150px;
     margin: auto;
     display: block;
     width: 50%;
-    .loading--icon & {
-        width: auto;
-        height: 40px;
-        .book {
-            fill: darken( $gray, 10% );
-        }
+    .order {
+        animation: Fill1 1.2s ease-in-out 0.2s infinite;
+        fill: $light-gray;
     }
-    .book {
-        animation: Book1 1.2s ease-in-out 0.2s infinite;
-        fill: $gray;
+    .cloud {
+        stroke: $gray;
+        stroke-width: 3;
     }
     $number: 9;
     @for $i from 1 through $number {
         $pctRange: 100/$number;
         $pctEnd: $pctRange * $i;
         $pctStart: $pctEnd - $pctRange;
-        @keyframes Book#{ $i } {
+
+        @keyframes Fill#{ $i } {
             from, #{ $pctStart }% {
-                fill: $gray;
+                fill: $light-gray;
             }
             to, #{ $pctEnd }% {
-                fill: $accent;
+                @if $i == 7 {
+                    fill: $white;
+                }
+                @else {
+                    fill: $accent;
+                }
+
             }
         }
-        @keyframes BookButton#{ $i } {
-            from, #{ $pctStart }% {
-                fill: darken( $gray, 10% );
-            }
-            to, #{ $pctEnd }% {
-                fill: $white;
-            }
-        }
-        .book:nth-child( #{ $i } ) {
-            animation-name: Book#{ $i };
-            .loading--icon & {
-                animation-name: BookButton#{ $i };
-            }
+        .order-#{ $i } {
+            animation-name: Fill#{ $i };
         }
     }
 }
