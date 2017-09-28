@@ -11,6 +11,12 @@
     @include tablet {
         flex: 0 0 320px;
     }
+    @include desktop {
+        flex: 1 0 33%;
+        .centered-container {
+            margin-right: 0;
+        }
+    }
     .home__current-temperature {
         background: $white;
         padding-left: 20px;
@@ -28,6 +34,10 @@
     @include tablet {
         max-width: calc( 100% - 320px );
         flex: 1 1 calc( 100% - 320px );
+    }
+    @include desktop {
+        max-width: 67%;
+        flex: 1 0 67%;
     }
     .right-wrapper {
         display: block;
@@ -60,6 +70,7 @@
     }
     .width-wrapper {
         max-width: 800px;
+        margin-left: 0;
     }
 }
 .centered-container {

@@ -76,13 +76,10 @@ a, a:hover {
     color: $primary;
     letter-spacing: -0.56px;
     text-align: center;
-    margin-bottom: 24px;
-    @include tablet {
-        font-size: 36px;
-        letter-spacing: -0.9px;
-        font-weight: normal;
-        text-align: center;
-        margin-bottom: 20px;
+    margin-bottom: 30px;
+    @include desktop {
+        font-size: 24px;
+        letter-spacing: -0.67px;
     }
 }
 
