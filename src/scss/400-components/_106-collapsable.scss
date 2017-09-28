@@ -1,6 +1,5 @@
 .collapsable {
     transition: visibility 0.6s, opacity 0.6s;
-    // overflow: hidden; - removed for search dropdown.  If this breaks something else, re-evaluate. -KS
     visibility: visible;
     opacity: 1;
     &.collapsed {
