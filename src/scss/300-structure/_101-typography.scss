@@ -74,15 +74,20 @@ a, a:hover {
 
 // Nav text
 .menu__link--primary {
-    color: $white;
     font-weight: bold;
     &:hover {
-        color: darken( $accent, 15% );
+        color: darken( $dark-gray, 10% );
     }
-    &.active {
-        color: $accent;
+    @include tablet {
+        color: $white;
         &:hover {
             color: darken( $accent, 15% );
+        }
+        &.active {
+            color: $accent;
+            &:hover {
+                color: darken( $accent, 15% );
+            }
         }
     }
 }
