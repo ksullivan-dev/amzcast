@@ -182,7 +182,8 @@ gulp.task('webserver', function () {
 
 gulp.task('watch', function () {
 	gulp.watch(PATH.JS_ONLY, ['lint']);
-	gulp.watch(PATH.JS_HTML, ['js-dev']);
+	// gulp.watch(PATH.JS_HTML, ['js-dev']);
+	gulp.watch(PATH.JS_HTML, ['js']);
 	gulp.watch(PATH.SASS, function( e ){
 		if( e.type === 'added' || e.type === 'deleted' ){
 			gulp.start( 'import-styles' );
