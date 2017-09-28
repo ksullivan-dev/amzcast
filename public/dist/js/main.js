@@ -10,7 +10,7 @@
 			$( document ).click( this.closeMenu );
 			var self = this;
 
-			$.ajax({ url: "http://amzcast.com/temps?website=us" })
+			$.ajax({ url: "https://amzcast.com/temps?website=us" })
 				.done(function( data ) {
 					var newData = [];
 					_.each( data, function( value, key ){
