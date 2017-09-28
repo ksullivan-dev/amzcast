@@ -10,15 +10,21 @@
 		Templates = require('../templates/'),
 		Module    = {};
 
+		require('./plugins/whiteout');
+
 	$.extend( Module, {
 		init: function(){
 			this.chartData = this.createChartArrays( this.fakeData() );
 			this.data = this.parseData( this.fakeData() );
-			this.renderCurrent( this.data[0] );
-			this.renderWeek( this.data.slice( 0, 7 ) );
-			this.renderChart();
 			$( document ).click( '.toggle--menu', this.showMenu );
 			$( document ).click( this.closeMenu );
+			var self = this;
+			setTimeout( function(){
+				self.renderCurrent( self.data[0] );
+				self.renderWeek( self.data.slice( 0, 7 ) );
+				self.renderChart();
+				_.defer( self.isLoaded );
+			}, 600 );
 		},
 		showMenu: function( e ){
 			var el = $( e.target );
@@ -139,6 +145,9 @@
 		},
 		renderCurrent: function( data ){
 			$( '.home__current-temperature' ).html( Templates.day({ Day: data }) );
+		},
+		isLoaded: function(){
+			$( '.content' ).whiteout( 'clear' );
 		}
 	});
 	Module.init();
