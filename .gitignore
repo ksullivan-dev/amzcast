@@ -2,9 +2,9 @@
 src/js/config.js
 node_modules
 
-public/index.html
-public/dist/css
-public/dist/js
+# public/index.html
+# public/dist/css
+# public/dist/js
 
 src/templates/index.js
 
