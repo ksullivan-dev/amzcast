@@ -66,11 +66,11 @@ gulp.task( 'import-styles', function(){
 
 gulp.task( 'sass-compile-dev', function(){
 	return gulp.src('src/scss/style.scss')
-		.pipe(sourcemaps.init())
+		// .pipe(sourcemaps.init())
 		.pipe(sass({
 			errLogToConsole: true
 		}))
-		.pipe(sourcemaps.write())
+		// .pipe(sourcemaps.write())
 		.pipe(prefixer({
 			browsers: ['last 4 versions', '> 5%']
 		}))
