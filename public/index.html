@@ -7,48 +7,43 @@
 	<title>AmzCast - The Amazon Weather Forecast</title>
 	<meta name="description" content="AmzCast is a weather report showing turbulence in the Amazon A9 algorithm in the recent past. ">
 	<meta name="keywords" content="Amazon, A9, algorithm, Amazon forecast, algorithm changes">
-
-	<!-- Homescreen Icons -->
-	<!--
-	<link href="/dist/images/icons/bookscouter-icon-180.png" rel="apple-touch-icon" sizes="180x180" />
-	<link rel="icon" sizes="192x192" href="/dist/images/icons/bookscouter-icon-180.png">
-	<link rel="icon" type="image/ico" href="/dist/images/icons/favicon-32x32.png">
-	<link rel="icon" type="image/ico" href="/dist/images/icons/favicon-16x16.png">
-	<meta name="msapplication-TileColor" content="#ffffff">
-	<meta name="msapplication-TileImage" content="/dist/images/icons/bookscouter-icon-144.png">
-	<meta name="theme-color" content="#ffffff">
-	-->
-
-	<!-- Social Sharing: FB -->
-	<!--
-	<meta property="og:type" content="website">
-	<meta property="og:image" content="/dist/images/icons/bookscouter-240x240.jpg">
-	<meta property="fb:app_id" content="45509634306">
-	<meta property="og:title" content="BookScouter">
-	<meta property="og:url" content="https://bookscouter.com">
-	<meta property="og:description" content="Compare textbook buyback prices from over 35 online companies with a single search. Selling textbooks online pays you more than college bookstores. BookScouter's buyback price comparison helps you sell your books for the best price.">
-	<meta property="og:site_name" content="BookScouter">
-	-->
-
-	<!-- Social Sharing: Twitter -->
-	<!--
-	<meta property="twitter:card" content="summary">
-	<meta property="twitter:site" content="@bookscouter">
-	<meta property="twitter:title" content="BookScouter">
-	<meta property="twitter:description" content="Compare textbook buyback prices from over 35 online companies with a single search. Selling textbooks online pays you more than college bookstores. BookScouter's buyback price comparison helps you sell your books for the best price.">
-	<meta property="twitter:image" content="/dist/images/icons/bookscouter-240x240.jpg">
-	<meta property="twitter:url" content="https://bookscouter.com">
-	-->
-
 	<meta name="robots" content="index, follow">
-	<meta name="fragment" content="!">
+	<!-- Handlebars templates -->
+	<script id="dayTemplate" type="text/x-handlebars-template">
+		<div class="current-day centered-container flex-parent">
+		    <div class="day__icon flex-child">
+		        <img src="dist/images/icons/{{ Day.iconSlug }}.svg" alt="{{ Day.condition }} icon" />
+		    </div>
+		    <div class="day__content flex-child">
+		        <div class="day__condition">Very Dynamic</div>
+		        <div class="day__temp">{{ Day.value }}</div>
+		        <div class="day__date">{{ Day.dateString }}</div>
+		    </div>
+		</div>
+	</script>
+	<script id="weekTemplate" type="text/x-handlebars-template">
+		<div class="centered-container">
+		    <h2 class="section__title">Weather for Past Week</h2>
+		    {{# each Day }}
+		        <div class="weekly flex-parent__center-cross {{# if @first }}first{{/ if }}">
+		            <div class="weekly__temp flex-child">{{ value }}</div>
+		            <div class="weekly__date flex-child">
+		                <div class="weekly__dayOfWeek">{{ dayOfWeek }}</div>
+		                <div class="weekly__dayOfMonth">{{ dayOfMonth }}</div>
+		            </div>
+		            <div class="weekly__icon flex-child">
+		                <img src="dist/images/icons/{{ iconSlug }}.svg" alt="{{ condition }} icon" />
+		            </div>
+		        </div>
+		    {{/ each }}
+		</div>
+	</script>
 	<!-- CSS -->
 	<link href="dist/css/style.css" rel="stylesheet" />
 	<!-- endinject -->
 </head>
-<body class="primary-app flex-parent__column">
+<body class="flex-parent__column">
 	<!-- Header -->
-	<div id="messageContainer" class="alert-message"></div>
 	<header id="header" class="header flex-child">
 		<div class="width-wrapper header__container flex-parent__center-cross">
 			<a href="/" title="AmzCast" class="header__logo">
@@ -94,8 +89,12 @@
 			</div>
 		</div>
 	</div>
-	<!-- Modals -->
-	<div id="modals"></div>
-	<script src="dist/js/main.js" async></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
+	<script src="dist/js/whiteout.js"></script>
+	<script src="dist/js/main.js"></script>
 </body>
 </html>

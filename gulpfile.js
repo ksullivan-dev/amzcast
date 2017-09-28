@@ -142,25 +142,8 @@ gulp.task('templates', function () {
 		.pipe(gulp.dest('./src/templates'));
 });
 
-gulp.task('js', ['templates'], function () {
-	browserify({
-		entries: [PATH.JS_MAIN_ENTRY],
-		insertGlobals: true,
-		debug: true,
-		cache: {}, packageCache: {}, fullPaths: true
-	})
-		.bundle()
-		.on('error', handleError)
-		.pipe(source(PATH.JS_MAIN_OUTFILE))
-		.pipe(gulp.dest(PATH.JS_DEST));
-
-	browserify({
-		entries: [PATH.JS_MAIN_ENTRY],
-	})
-		.bundle()
-		.on('error', handleError)
-		.pipe(source(PATH.JS_MAIN_OUTFILE_MIN))
-		.pipe(streamify(uglify()))
+gulp.task('js', function () {
+	return gulp.src(PATH.JS_MAIN_ENTRY)
 		.pipe(gulp.dest(PATH.JS_DEST));
 });
 
@@ -233,7 +216,7 @@ gulp.task('configure-mobile', function () {
 gulp.task('build', ['imagemin', 'js', 'version']);
 
 // Dev tasks -> imagemin, js-dev (depends on templates), sass-dev (depends on sass-compile-dev), webserver, and watch
-gulp.task('dev', ['imagemin', 'js-dev', 'sass-dev', 'webserver', 'watch']);
+gulp.task('dev', ['imagemin', 'js', 'sass-dev', 'webserver', 'watch']);
 
 gulp.task('default', ['configure-master', 'dev']);
 

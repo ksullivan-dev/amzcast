@@ -1,5 +1,5 @@
 /*global module,require,global,setTimeout,jQuery*/
-global.jQuery = require( 'jquery' );
+// global.jQuery = require( 'jquery' );
 ( function( $ ) {
     'use strict';
     $.fn.whiteout = function ( type, options ) {
